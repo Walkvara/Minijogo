@@ -11,9 +11,29 @@ translator = Translator()
 recognizer = sr.Recognizer()
 
 words_by_level = {
-    "fácil": ["gato", "cachorro", "maçã", "leite", "sol", "livro", "carro", "flor", "bola", "mesa"],
-    "médio": ["casa", "escola", "amigo", "janela", "amarelo"],
-    "difícil": ["tecnologia", "universidade", "informação", "pronúncia", "imaginação"]
+    "fácil": [
+        "gato", "cachorro", "maçã", "leite", "sol", "livro", "carro", "flor", "bola", "mesa",
+        "porta", "janela", "cadeira", "água", "fogo", "terra", "ar", "mão", "pé", "olho",
+        "nariz", "boca", "dia", "noite", "céu", "mar", "rio", "pão", "queijo", "ovo"
+    ],
+
+    "médio": [
+        "casa", "escola", "amigo", "janela", "amarelo",
+        "cidade", "estrada", "viagem", "tempo", "chuva",
+        "vento", "montanha", "praia", "floresta", "animal",
+        "comida", "bebida", "trabalho", "dinheiro", "mercado",
+        "família", "história", "música", "filme", "jogo",
+        "telefone", "computador", "internet", "notícia", "festa"
+    ],
+
+    "difícil": [
+        "tecnologia", "universidade", "informação", "pronúncia", "imaginação",
+        "desenvolvimento", "conhecimento", "responsabilidade", "comunicação", "experiência",
+        "oportunidade", "necessidade", "criatividade", "inteligência", "consciência",
+        "sociedade", "economia", "filosofia", "psicologia", "educação",
+        "organização", "globalização", "sustentabilidade", "diversidade", "independência",
+        "possibilidade", "realidade", "personalidade", "motivação", "determinação"
+    ]
 }
 
 # limpar tela
@@ -111,55 +131,6 @@ def jogar_base(vidas):
             print(f"⭐ Pontos: {score} | ♾️ Infinito")
 
         time.sleep(1)
-
-    print("\n💀 Fim do jogo!")
-    print(f"🏆 Pontuação final: {score}")
-
-    if vidas == 0:
-        print("Você perdeu todas as vidas 😵")
-    elif score >= 50:
-        print("Você amassou 😎🔥")
-    elif score >= 20:
-        print("Mandou bem 👏")
-    else:
-        print("Treina mais :( ok?")
-
-    input("\nPressione ENTER para voltar ao menu...")
-
-# modos
-def jogar_normal():
-    jogar_base(vidas=3)
-
-def jogar_infinito():
-    jogar_base(vidas=None)
-
-def jogar_vida_unica():
-    jogar_base(vidas=1)
-
-# menu
-while True:
-    limpar()
-    print("====== 🎮 PYTHOLINGO 🎮 ======")
-    print("1. Jogar")
-    print("2. Modo infinito")
-    print("3. Vida única")
-    print("4. Sair")
-
-    opcao = input("\nEscolha uma opção: ")
-
-    if opcao == "1":
-        jogar_normal()
-    elif opcao == "2":
-        jogar_infinito()
-    elif opcao == "3":
-        jogar_vida_unica()
-    elif opcao == "4":
-        print("Saindo... até mais 😄")
-        break
-    else:
-        print("Opção inválida 😅")
-        time.sleep(1)
-
 
 
 
